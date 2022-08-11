@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { __postTodos } from "../redux/modules/todosSlice";
 import nextId from "react-id-generator";
+import "../css/Add.css"
+import Buttons from "../ele/Button";
+
 const Modal = ({ Setmodal }) => {
   const id = nextId();
 
@@ -35,35 +38,39 @@ const Modal = ({ Setmodal }) => {
   };
   return (
     <form onSubmit={onSubmitHandler}>
-      <div
+      <div className="cancelbutton"
         onClick={() => {
           Setmodal(false);
         }}
       >
-        x
+        X X X
       </div>
-      <label>작성자</label>
-      <input
+      <div className="objects_container">
+
+      <label className="objects">작성자</label>
+      <input className="input_user"
         onChange={onChangeHandler}
         name="name"
         type="text"
         value={todos.name}
       ></input>
-      <label>제목</label>
-      <input
+      <label className="objects">제목</label>
+      <input className="input_title"
         onChange={onChangeHandler}
         name="title"
         type="text"
         value={todos.title}
       ></input>
-      <label>내용</label>
-      <input
+      <label className="objects">내용</label>
+      <input className="input_body"
         onChange={onChangeHandler}
         name="body"
         type="text"
         value={todos.body}
       ></input>
-      <button>추가하기</button>
+      <Buttons size="medium">추가하기</Buttons>
+      
+      </div>
     </form>
   );
 };

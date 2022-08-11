@@ -1,26 +1,33 @@
 import React from "react";
 import styled from "styled-components";
 
+
 const Header = () => {
   return (
     <Headers>
       <Home>
-        <Homeitem>home</Homeitem>
-        <Title>list Page</Title>
+        <Homeitem>HOME</Homeitem>
+        <Title>List Page</Title>
       </Home>
     </Headers>
   );
 };
 const Headers = styled.div`
+  display: flex;  
   width: 100%;
-  height: 200px;
+  height: 100px;
+  background-color: #DFC043;
+  color : white;
 `;
 const Home = styled.div`
   display: flex;
   align-items: center;
 `;
 const Homeitem = styled.div`
-  padding: 30px;
+display: flex;  
+padding: 30px;
+font-size: 20px;
+color : #AE591F;
 `;
 const Title = styled.div`
   font-size: 40px;
